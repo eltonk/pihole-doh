@@ -40,3 +40,8 @@ services:
     restart: unless-stopped
 ```
 2. Run `docker-compose up --detach` to build and start pi-hole
+
+## More info
+This docker container is based on the official pihole/pihole docker container.
+
+To see more configurations options, please check the official documentation at: https://hub.docker.com/r/pihole/pihole 
