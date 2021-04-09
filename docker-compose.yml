@@ -11,7 +11,7 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      # This activates the DoT-DoH features. This activates the DoT-DoH features. If you comment on this, the Pi-hole will act only as blocking ads.
+      # This activates the DoT-DoH features. If you comment on this, the Pi-hole will only act as blocking ads.
       PIHOLE_DNS_: '127.0.0.1#5053'
       # Set your timezone
       TZ: 'America/Chicago'
