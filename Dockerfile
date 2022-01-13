@@ -5,11 +5,13 @@ LABEL url="https://github.com/eltonk/pihole-dot-doh"
 
 # Install and configure cloudflared
 RUN /bin/bash -c 'cd /tmp; \
-wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb; \
-apt-get install ./cloudflared-stable-linux-amd64.deb; \
-rm cloudflared-stable-linux-amd64.deb;'
+apt-get update; \
+apt-get install wget -y; \
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm; \
+mv ./cloudflared-linux-arm /usr/local/bin/cloudflared; \
+chmod +x /usr/local/bin/cloudflared;'
 
-COPY cloudflared.yml /etc/cloudflared/config.yml
+COPY config.yml /etc/cloudflared/config.yml
 
 RUN /bin/bash -c 'mkdir -p /etc/services.d/cloudflared; \
 echo "#!/usr/bin/with-contenv bash" > /etc/services.d/cloudflared/run; \
