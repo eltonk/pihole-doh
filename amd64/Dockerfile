@@ -11,7 +11,7 @@ wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudfla
 mv ./cloudflared-linux-amd64 /usr/local/bin/cloudflared; \
 chmod +x /usr/local/bin/cloudflared;'
 
-COPY ../config.yml /etc/cloudflared/config.yml
+COPY config.yml /etc/cloudflared/config.yml
 
 RUN /bin/bash -c 'mkdir -p /etc/services.d/cloudflared; \
 echo "#!/usr/bin/with-contenv bash" > /etc/services.d/cloudflared/run; \
