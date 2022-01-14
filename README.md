@@ -7,10 +7,10 @@ Official Pi-hole docker image along with DoH (DNS over HTTPS) powered by Cloudfl
 <!-- Delete above HTML and insert markdown for dockerhub : ![Pi-hole](https://pi-hole.github.io/graphics/Vortex/Vortex_with_text.png) -->
 
 ## Docker tags
-I have build this docker image using the arm architecture and also for amd64.<br>
+I have build this docker image using the arm architecture and for amd64.<br>
 <br>
 To use in your Raspberry Pi docker, please, refer to the tag <b>latest-arm</b><br>
-To use in a linux/windows docker container, please refer to the tag <b>latest</b><br>
+To use in a linux/windows docker container, please refer to the tag <b>latest-amd64</b><br>
 
 ## Quick Start
 You have some options how to start the docker container. 
