@@ -2,8 +2,8 @@ version: "3"
 
 services:
   pihole-dot-doh:
-    container_name: pihole-dot-doh
-    image: eltonk/pihole-dot-doh:latest
+    container_name: pihole-doh
+    image: eltonk/pihole-doh:latest
     ports:
       - "53:53/tcp"
       - "53:53/udp"
@@ -11,11 +11,11 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      # This activates the DoT-DoH features. If you comment on this, the Pi-hole will only act as blocking ads.
+      # This activates the DoH feature. If you comment on this, the Pi-hole will only act as blocking ads.
       PIHOLE_DNS_: '127.0.0.1#5053'
       # Set your timezone
-      TZ: 'America/Chicago'
-      # WEBPASSWORD: 'uncomment and set a secure password here or it will be random'
+      TZ: 'Europe/Berlin'
+      WEBPASSWORD: 'password123' #change the admin password, otherwise the default password is 'password123'
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole/:/etc/pihole/'
