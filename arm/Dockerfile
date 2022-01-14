@@ -1,7 +1,7 @@
 FROM pihole/pihole:latest
 
 LABEL maintainer="Elton Kuzniewski"
-LABEL url="https://github.com/eltonk/pihole-dot-doh"
+LABEL url="https://github.com/eltonk/pihole-doh"
 
 # Install and configure cloudflared
 RUN /bin/bash -c 'cd /tmp; \
