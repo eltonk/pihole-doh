@@ -14,7 +14,8 @@ To use in a linux/windows docker container, please refer to the tag <b>latest</b
 
 ## Quick Start
 You have some options how to start the docker container. 
-1. In you Raspberry Pi console, you can run the following Docker command:
+
+### In you Raspberry Pi console, you can run the following Docker command:
 ```shell
 docker run -d --name='Pihole-DoH' \
 -e TZ="Europe/Berlin" \
@@ -31,7 +32,7 @@ docker run -d --name='Pihole-DoH' \
 'eltonk/pihole-doh:latest-arm'
 ```
 
-2. You also can use a docker-compose style. See a
+### You also can use a docker-compose style
 [Docker-compose](https://docs.docker.com/compose/install/) example:
 
 ```yaml
@@ -65,6 +66,12 @@ services:
     restart: unless-stopped
 ```
 Run `docker-compose up --detach` to start the pihole-doh container.
+
+## Testing your configuration
+To test your configuration, after proper configured the new DNS adress in your router or computer, go to the following page:
+https://1.1.1.1/help
+
+You should note the line "<b>Using DNS over HTTPS (DoH)</b>" flagged as <b>Yes</b>.
 
 ## More info
 This docker container is based on the official pihole/pihole docker container.
